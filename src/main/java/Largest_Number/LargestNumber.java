@@ -48,8 +48,6 @@ public class LargestNumber {
   }
   
   public static void main(String[] args) {
-    String str = "";
-    int i = 0;
-    String.valueOf(i);
+    
   }
 }
