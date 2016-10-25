@@ -2,7 +2,6 @@ package collections;
 
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.Objects;
 
 /**
  * Created by lianhui on 16/10/25.
@@ -108,17 +107,15 @@ public class BoundedPriorityQueue<T> {
     }
 
     public static void main(String[] args) {
-
-        BoundedPriorityQueue priorityQueue = new BoundedPriorityQueue<Integer>(5, new
-                Comparator<Integer>() {
+        Comparator<Integer> intComparator = new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return o1.compareTo(o2);
             }
-        });
-
+        };
+        BoundedPriorityQueue priorityQueue = new BoundedPriorityQueue(5, intComparator);
         for (int i = 0; i < 100; i++) {
-            priorityQueue.add(new Integer(i));
+            priorityQueue.add(i);
         }
 
         Iterator iterator = priorityQueue.iterator();
